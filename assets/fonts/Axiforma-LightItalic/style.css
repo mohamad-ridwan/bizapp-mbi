@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Axiforma';
+    src: local('Axiforma Light Italic'), local('Axiforma-Light-Italic'),
+        url('Axiforma-LightItalic.woff2') format('woff2'),
+        url('Axiforma-LightItalic.woff') format('woff'),
+        url('Axiforma-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+  }

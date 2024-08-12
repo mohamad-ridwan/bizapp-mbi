@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.8"
+  },
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/styles/dashboard/dashboard.css -o ./src/styles/dashboard/dashboard-output.css --watch"
+  },
+  "dependencies": {
+    "@material-tailwind/html": "^2.2.2",
+    "maplibre-gl": "^4.5.2"
+  },
+  "type": "module"
+}

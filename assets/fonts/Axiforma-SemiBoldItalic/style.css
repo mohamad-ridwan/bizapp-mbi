@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Axiforma';
+    src: local('Axiforma SemiBold Italic'), local('Axiforma-SemiBold-Italic'),
+        url('Axiforma-SemiBoldItalic.woff2') format('woff2'),
+        url('Axiforma-SemiBoldItalic.woff') format('woff'),
+        url('Axiforma-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+  }

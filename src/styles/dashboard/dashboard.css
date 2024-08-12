@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+@font-face {
+    font-family: 'axiforma-normal-100';
+    src: url('../../../assets/fonts/Axiforma-Thin/Axiforma-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'axiforma-normal-100-italic';
+    src: url('../../../assets/fonts/Axiforma-ThinItalic/Axiforma-ThinItalic.woff2') format('woff2');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'axiforma-normal-300';
+    src: url('../../../assets/fonts/Axiforma-Light/Axiforma-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'axiforma-normal-300-italic';
+    src: url('../../../assets/fonts/Axiforma-LightItalic/Axiforma-LightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'axiforma-book-normal';
+    src: url('../../../assets/fonts/Axiforma-Book/Axiforma-Book.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'axiforma-book-italic';
+    src: url('../../../assets/fonts/Axiforma-BookItalic/Axiforma-BookItalic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'axiforma-regular';
+    src: url('../../../assets/fonts/Axiforma-Regular/Axiforma-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'axiforma-italic';
+    src: url('../../../assets/fonts/Axiforma-Italic/Axiforma-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'axiforma-medium';
+    src: url('../../../assets/fonts/Axiforma-Medium/Axiforma-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'axiforma-medium-italic';
+    src: url('../../../assets/fonts/Axiforma-MediumItalic/Axiforma-MediumItalic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'axiforma-semibold';
+    src: url('../../../assets/fonts/Axiforma-SemiBold/Axiforma-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'axiforma-semibold-italic';
+    src: url('../../../assets/fonts/Axiforma-SemiBoldItalic/Axiforma-SemiBoldItalic.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'axiforma-bold';
+    src: url('../../../assets/fonts/Axiforma-Bold/Axiforma-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'axiforma-bold-italic';
+    src: url('../../../assets/fonts/Axiforma-BoldItalic/Axiforma-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+}

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Axiforma';
+    src: local('Axiforma Book'), local('Axiforma-Book'),
+        url('Axiforma-Book.woff2') format('woff2'),
+        url('Axiforma-Book.woff') format('woff'),
+        url('Axiforma-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }

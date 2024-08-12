@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/dashboard/dashboard-output.css">
+    <!-- MAP CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.5.2/dist/maplibre-gl.min.css">
+    <!-- Material Icons Link -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.5.2/dist/maplibre-gl.min.js"></script>
+
+    <!-- CHART JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+
+    <!-- COMPONENTS -->
+    <script src="../components/sidebar/menuSidebar.js" type="text/javascript" defer></script>
+    <script src="../components/navbar/index.js" type="text/javascript" defer></script>
+    <script src="../components/cards/resourceCard.js" type="text/javascript" defer></script>
+    <script src="../components/cards/graphics-card/index.js" type="text/javascript" defer></script>
+    <script src="../components/cards/graphics-card/cardInfo.js" type="text/javascript" defer></script>
+    <script src="../components/tables/index.js" type="text/javascript" defer></script>
+    <script src="../components/tables/thead.js" type="text/javascript" defer></script>
+    <script src="../components/tables/tbody.js" type="text/javascript" defer></script>
+    <script src="../components/cards/cardArea.js" type="text/javascript" defer></script>
+    <script src="../components/number-customers/index.js" type="text/javascript" defer></script>
+
+    <script src="../lib/chart/kategoriProduk.js" type="module"></script>
+    <script src="../lib/chart/bahanMentah.js" type="module"></script>
+
+    <script type="module" src="../lib/map/index.js"></script>
+
+    <script src="node_modules/@material-tailwind/html@latest/scripts/ripple.js"></script>
+    <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/script-name.js"></script>
+    <script src="node_modules/@material-tailwind/html/scripts/collapse.js"></script>
+    <title>MBI - Menteri Besar Selangor Incorporated</title>
+</head>
+
+<body>
+    <div class="min-h-screen h-screen max-h-screen w-screen flex !bg-secondary-background">
+        <!-- SIDEBAR -->
+        <div class="w-[15%] h-full flex" style="background-image: linear-gradient(180deg,#4D3F7B,#4d3f7bd4 0%,#0E061D)">
+            <div
+                class="relative flex min-h-screen h-[calc(100vh-20rem)] !w-full flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-xl shadow-blue-gray-900/5 justify-between">
+                <div class="gap-8 flex flex-col px-6 py-4">
+                    <img src="../../../assets/images/logo/mbi.png" alt="mbi" height="60" width="120"
+                        class="object-contain max-w-[120px]">
+                </div>
+                <nav
+                    class="flex w-full flex-col gap-1 py-2 font-sans text-base font-normal !text-neutral-dark !h-full relative overflow-y-auto overflow-x-hidden px-6">
+                    <menu-sidebar name="Dashboard" icon="fas fa-chart-bar" path="#"></menu-sidebar>
+                    <menu-sidebar name="Profile" icon="fa-regular fa-circle-user" path="#"></menu-sidebar>
+                    <menu-sidebar name="Laporan" icon="fa-solid fa-chart-line" path="#"></menu-sidebar>
+                    <menu-sidebar name="Akaun" icon="fa-solid fa-building-columns" path="#"></menu-sidebar>
+                    <menu-sidebar name="Produk" icon="fa-solid fa-cart-flatbed-suitcase" path="#"></menu-sidebar>
+                    <menu-sidebar name="Inventori" icon="fa-solid fa-box" path="#"></menu-sidebar>
+                    <menu-sidebar name="Staf" icon="fa-solid fa-user-plus" path="#"></menu-sidebar>
+                    <menu-sidebar name="Kedai" icon="fa-solid fa-store" path="#"></menu-sidebar>
+                    <menu-sidebar name="Integrasi" icon="fa-solid fa-timeline" path="#"></menu-sidebar>
+                </nav>
+                <div class="flex w-full flex-col font-sans text-base font-normal !text-neutral-dark px-6 pb-4">
+                    <menu-sidebar name="Tetapan" icon="fa-solid fa-gear" path="#"></menu-sidebar>
+                    <menu-sidebar name="Bantuan" icon="fa-solid fa-circle-info" path="#"></menu-sidebar>
+                    <menu-sidebar name="Log keluar" icon="fa-solid fa-arrow-right-from-bracket" path="#"></menu-sidebar>
+                </div>
+            </div>
+        </div>
+        <!-- RIGHT CONTENT -->
+        <div class="h-screen w-[85%] flex flex-col overflow-y-auto overflow-x-hidden">
+            <!-- NAVBAR -->
+            <navbar-component></navbar-component>
+            <!-- CONTENT -->
+            <div class="flex w-full justify-center">
+                <div class="p-6 w-full max-w-[1500px] gap-4 flex flex-col">
+                    <!-- RESOURCE INFO -->
+                    <div class="grid grid-cols-4 gap-4 items-center">
+                        <resource-card icon="fa-solid fa-chart-pie" title="Jumlah Jualan 2024" total="RM 79,628.51"
+                            desc="Jualan 2023 : RM714,678.54" isLinked="true">
+
+                        </resource-card>
+                        <resource-card icon="fa-solid fa-right-left" title="Rekod Transaksi 2024" total="14,376"
+                            desc="From last year" discount="+50%" bgDiscount="!bg-success-default/[.15]"
+                            colorDiscount="!text-success-default">
+                        </resource-card>
+                        <resource-card icon="fa-solid fa-chart-pie" title="Jumlah Jualan Hari ini" total="RM 708.65"
+                            desc="Jualan Semalam : RM 155.75">
+
+                        </resource-card>
+                        <resource-card icon="fa-solid fa-right-left" title="Transaksi Hari ini" total="57"
+                            desc="From yesterday" discount="-10%" bgDiscount="!bg-error-default/[.15]"
+                            colorDiscount="!text-error-default">
+
+                        </resource-card>
+                    </div>
+                    <!-- RESOURCE INFO LOCATION -->
+                    <div class="grid grid-cols-4 gap-4 min-h-[468px]">
+                        <!-- MAP -->
+                        <div id="map" class="flex col-span-2 relative rounded-xl">
+                            <div class="absolute h-auto bottom-[32px] w-full flex flex-col-reverse z-10">
+                                <ul id="card-area" class="flex gap-4 overflow-x-auto no-scrollbar px-8 items-center">
+                                </ul>
+                                <card-area></card-area>
+                            </div>
+                        </div>
+                        <!-- RESOURCE INFO -->
+                        <div class="flex flex-col gap-4 col-span-1">
+                            <resource-card title="Daerah Aktif Semasa" total="80" pdMainContent="pt-6 pb-2 px-6"
+                                desc="Jumlah Keseluruhan Daerah : 10">
+
+                            </resource-card>
+                            <resource-card title="Kedai Aktif Jualan Semasa" total="20" pdMainContent="pt-6 pb-2 px-6"
+                                desc="Jumlah Kedai Berdaftar : 30">
+
+                            </resource-card>
+                            <resource-card title="Kategori Kedai Semasa" total="5" pdMainContent="pt-6 pb-2 px-6"
+                                desc="Jumlah Kedai Berdaftar : 11">
+
+                            </resource-card>
+                        </div>
+                        <!-- NUMBER CUSTOMERS -->
+                        <number-customers></number-customers>
+                    </div>
+                    <!-- GRAPICH -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <graphics-card title="Kategori Produk" lists="
+                        <card-info
+                            name='Makanan'
+                            icon='../../../assets/images/icons/drink.png'
+                            value='10'
+                            background='!bg-primary-info'
+                        ></card-info>
+                        <card-info
+                            name='Pakaian'
+                            icon='../../../assets/images/icons/pakaian.png'
+                            value='8'
+                            background='!bg-primary-info2'
+                            marginTop='mt-[-9.5px]'
+                        ></card-info>
+                        <card-info
+                            name='Gajet'
+                            icon='../../../assets/images/icons/gamepad.png'
+                            value='3'
+                            background='!bg-primary-info3'
+                            marginTop='mt-[-9.5px]'
+                        ></card-info>
+                        <card-info
+                            name='Buku'
+                            icon='../../../assets/images/icons/book.png'
+                            value='1'
+                            background='!bg-primary-info4'
+                            marginTop='mt-[-9.5px]'
+                        ></card-info>
+                        <card-info
+                            name='Lain-lain'
+                            icon='../../../assets/images/icons/menu.png'
+                            value='5'
+                            background='!bg-primary-info5'
+                            marginTop='mt-[-9.5px]'
+                        ></card-info>
+                        <card-info
+                            name='Tidak Dinyatakan'
+                            icon='../../../assets/images/icons/menu.png'
+                            value='9'
+                            background='!bg-primary-info6'
+                            marginTop='mt-[-9.5px]'
+                        ></card-info>
+                        " chart="<canvas id='kategoriProdukChart'></canvas>">
+                        </graphics-card>
+                        <graphics-card title="Bahan Mentah" lists="
+                        <card-info
+                            name='Beras'
+                            icon='../../../assets/images/icons/beras.png'
+                            value='3'
+                            background='!bg-primary-info'
+                        ></card-info>
+                        <card-info
+                            name='Minyak'
+                            icon='../../../assets/images/icons/blood.png'
+                            value='7'
+                            background='!bg-primary-info2'
+                            marginTop='mt-[-9.5px]'
+                        ></card-info>
+                        <card-info
+                            name='Sayur'
+                            icon='../../../assets/images/icons/sayur.png'
+                            value='5'
+                            background='!bg-primary-info3'
+                            marginTop='mt-[-9.5px]'
+                        ></card-info>
+                        <card-info
+                            name='Ikan'
+                            icon='../../../assets/images/icons/fish.png'
+                            value='2'
+                            background='!bg-primary-info4'
+                            marginTop='mt-[-9.5px]'
+                        ></card-info>
+                        <card-info
+                            name='Gula'
+                            icon='../../../assets/images/icons/suga.png'
+                            value='4'
+                            background='!bg-primary-info5'
+                            marginTop='mt-[-9.5px]'
+                        ></card-info>
+                        <card-info
+                            name='Garam'
+                            icon='../../../assets/images/icons/salt.png'
+                            value='1'
+                            background='!bg-primary-info6'
+                            marginTop='mt-[-9.5px]'
+                        ></card-info>
+                        " chart="<canvas id='bahanMentahChart'></canvas>">
+                        </graphics-card>
+                    </div>
+                    <!-- TABLE -->
+                    <table-container>
+                    </table-container>
+                    <th-table></th-table>
+                    <table-body></table-body>
+                    <!-- END TABLE -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
